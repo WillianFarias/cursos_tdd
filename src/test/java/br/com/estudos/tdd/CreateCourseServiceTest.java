@@ -2,22 +2,16 @@ package br.com.estudos.tdd;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.Test;
 
 import br.com.estudos.tdd.modules.course.entite.Course;
 import br.com.estudos.tdd.modules.course.repository.CourseInMemoryRepository;
 import br.com.estudos.tdd.modules.course.service.CreateCourseService;
 
-@SpringBootTest
-class TddApplicationTests {
+public class CreateCourseServiceTest {
 
 	@Test
-	void contextLoads() {
-	}
-	
-	@Test
-	void should_be_able_to_create_a_new_course() {
+	public void should_be_able_to_create_a_new_course() {
 		Course course = new Course();
 		course.setDescription("Curso_Description_Test");
 		course.setName("Curso_name");
@@ -30,5 +24,4 @@ class TddApplicationTests {
 		
 		assertNotNull(courseCreated.getId());
 	}
-
 }
